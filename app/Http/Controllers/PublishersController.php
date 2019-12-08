@@ -82,4 +82,11 @@ class PublishersController extends Controller
     {
         //
     }
+
+    public function result(Publisher $publisher)
+    {
+        $books = $publisher->books()->paginate(12);
+        $title = 'الكتب التابعة للناشر: ' . $publisher->name;
+        return view('home', compact('books', 'title'));
+    }
 }

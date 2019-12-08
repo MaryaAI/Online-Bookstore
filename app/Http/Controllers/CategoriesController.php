@@ -82,4 +82,10 @@ class CategoriesController extends Controller
     {
         //
     }
+    public function result(Category $category)
+    {
+        $books = $category->books()->paginate(12);
+        $title = 'الكتب التابعة لتصنيف: ' . $category->name;
+        return view('home', compact('books', 'title'));
+    }
 }

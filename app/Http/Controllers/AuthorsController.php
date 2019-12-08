@@ -16,6 +16,12 @@ class AuthorsController extends Controller
     {
         //
     }
+    public function result(Author $author)
+    {
+        $books = $author->books()->paginate(12);
+        $title = 'الكتب التابعة للمؤلف: ' . $author->name;
+        return view('home', compact('books', 'title'));
+    }
 
     /**
      * Show the form for creating a new resource.

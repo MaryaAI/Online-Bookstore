@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Author;
+use App\Rating;
+use App\Category;
+use App\Publisher;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
@@ -46,7 +50,7 @@ class BooksController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        return view('books.show', compact('book'));
     }
 
     /**

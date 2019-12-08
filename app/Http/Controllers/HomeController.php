@@ -29,4 +29,11 @@ class HomeController extends Controller
     	return view('home', compact('books', 'title'));
 
     }
+    public function search(Request $request)
+    {
+        $books = Book::where('title', 'like', "%{$request->term}%")->paginate(12);
+        $title = ' عرض نتائج البحث عن: ' . $request->term;
+        return view('home', compact('books', 'title'));
+    }
+
 }

@@ -10,5 +10,6 @@ class Publisher extends Model
     {
         return $this->hasMany('App\Book');
     }
+    
 
 }

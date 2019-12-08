@@ -19,3 +19,8 @@ Route::get('/', 'HomeController@index')->name('index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/search', 'HomeController@search')->name('search');
+Route::resource('books', 'BooksController');
+Route::get('/authors/{author}', 'AuthorsController@result')->name('authors.show');
+Route::get('/publishers/{publisher}', 'PublishersController@result')->name('publishers.show');
+Route::get('/categories/{category}', 'CategoriesController@result')->name('categories.show');
