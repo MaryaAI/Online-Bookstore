@@ -39,10 +39,29 @@
                                     <div class="d-block mb-4 h-100 border rounded" style="padding:10px">
                                 <a href="{{ route('books.show', $book->id) }}" style="color:#555555">
                                     <img class="img-fluid img-thumbnail" src="{{ url('uploads/' . $book->cover_image) }}" alt="">
-                                    
+
                                     <b>{{ $book->title }}</b>
                                 </a>
-                                            
+                                <span class="score">
+                                    <div class="score-wrap">
+                                        <span class="stars-active" style="width:{{ $book->rate()*20 }}%">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+
+                                        <span class="stars-inactive">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </span>
+
                                 @if($book->category != NULL)
                                 <br><a style="color:#525252" href="{{ route('categories.show', $book->category) }}">{{ $book->category->name }}</a>
                             @endif
@@ -61,21 +80,21 @@
                             @endif
 
                                             <br><b>السعر: </b>{{ $book->price }} $
-                                            
+
 
                                             <br>
-                                           
+
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
-                            
+
                             <div class="col-12">{{ $books->links() }}</div>
-                            
+
                         @else
                             <h3 style="margin:0 auto">لا نتائج</h3>
                         @endif
-                    </div>        
+                    </div>
                 </div>
             </div>
         </div>

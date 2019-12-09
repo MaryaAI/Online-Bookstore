@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/search', 'HomeController@search')->name('search');
 Route::resource('books', 'BooksController');
+Route::post('/books/{book}/rate', 'BookController@rate')->name('books.rate');
 Route::get('/authors/{author}', 'AuthorsController@result')->name('authors.show');
 Route::get('/publishers/{publisher}', 'PublishersController@result')->name('publishers.show');
 Route::get('/categories/{category}', 'CategoriesController@result')->name('categories.show');

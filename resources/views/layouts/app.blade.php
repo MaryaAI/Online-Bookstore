@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
+           <style>
         .bg-danger, .bg-success {
             padding: 16px 0;
             border-radius: 5px;
@@ -27,7 +28,7 @@
             margin-bottom: 10px;
         }
         .card {
-            text-align: right; 
+            text-align: right;
             direction: rtl;
         }
         .rating {
@@ -49,15 +50,15 @@
             font-family: FontAwesome;
             content:'\f006';
         }
-        
+
         .rating-star.checked ~ .rating-star:after,
         .rating-star.checked:after {
             content:'\f005';
         }
-        
+
         .rating:hover .rating-star:after {content:'\f006';}
-        
-        .rating-star:hover ~ .rating-star:after, 
+
+        .rating-star:hover ~ .rating-star:after,
         .rating-star:hover:after {
             content:'\f005' !important;
         }
@@ -124,7 +125,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
